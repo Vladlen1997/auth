@@ -1,8 +1,6 @@
 <?php
 
-
 error_reporting(-1);
-
 session_start();
 
 ?>
@@ -18,6 +16,8 @@ session_start();
     <title>Index</title>
 </head>
 <body>
-
+<ul>
+    <li><a href="index.php">Index page</a></li>
+</ul>
 </body>
 </html>
