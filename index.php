@@ -6,12 +6,12 @@ session_start();
 $login = 'admin';
 $pass = '123';
 
-if(!empty($_POST)) {
-    if($_POST['login'] == $login && $_POST['pass'] == $pass) {
+if (!empty($_POST)) {
+    if ($_POST['login'] == $login && $_POST['pass'] == $pass) {
         $_SESSION['auth'] = 1;
-        echo 'success';
+        $_SESSION['res'] = 'success';
     } else {
-        echo 'Error';
+        $_SESSION['res'] = 'error';
     }
 }
 
