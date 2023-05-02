@@ -19,5 +19,7 @@ session_start();
 <ul>
     <li><a href="secret.php">Secret page</a></li>
 </ul>
+
+<h3>Эта страница общедоступна</h3>
 </body>
 </html>
