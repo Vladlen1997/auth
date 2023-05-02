@@ -3,6 +3,18 @@
 error_reporting(-1);
 session_start();
 
+$login = 'admin';
+$pass = '123';
+
+if(!empty($_POST)) {
+    if($_POST['login'] == $login && $_POST['pass'] == $pass) {
+        $_SESSION['auth'] = 1;
+        echo 'success';
+    } else {
+        echo 'Error';
+    }
+}
+
 ?>
 
 
@@ -26,7 +38,7 @@ session_start();
 
     Login: <input type="text" name="login">
     Password: <input type="password" name="pass">
-    <button type="submit">Authorization</button>
+    <button type="submit" name="auth">Authorization</button>
 
 </form>
 </body>
