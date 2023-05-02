@@ -19,5 +19,13 @@ session_start();
 <ul>
     <li><a href="index.php">Index page</a></li>
 </ul>
+
+<?php if (isset($_SESSION['auth'])): ?>
+<h3>Эту страницу может видеть только авторизованный пользователь!</h3>
+<?php else:  ?>
+<h3>Вы не авторизованы</h3>
+<?php endif; ?>
+
+
 </body>
 </html>
