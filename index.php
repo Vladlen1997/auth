@@ -21,5 +21,13 @@ session_start();
 </ul>
 
 <h3>Эта страница общедоступна</h3>
+
+<form enctype="multipart/form-data" method="post">
+
+    Login: <input type="text" name="login">
+    Password: <input type="password" name="pass">
+    <button type="submit">Authorization</button>
+
+</form>
 </body>
 </html>
