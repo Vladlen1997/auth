@@ -20,6 +20,14 @@ session_start();
     <li><a href="index.php">Index page</a></li>
 </ul>
 
+<?php
+
+if (isset($_SESSION['res'])) {
+echo $_SESSION['res'];
+unset($_SESSION['res']);
+}
+
+?>
 <?php if (isset($_SESSION['auth'])): ?>
     <h3>Эту страницу может видеть только авторизованный пользователь!</h3>
 <?php else: ?>
