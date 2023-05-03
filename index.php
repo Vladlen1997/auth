@@ -4,10 +4,10 @@ error_reporting(-1);
 session_start();
 
 $login = 'admin';
-$pass = '123';
+$pass = '$2y$10$LuN.f6R55zua709dJ/YwA.5/EF5nGK/hb8kgFJw7BxhZ.5OTwrCFi';
 
 if (!empty($_POST)) {
-    if ($_POST['login'] == $login && $_POST['pass'] == $pass) {
+    if ($_POST['login'] == $login && password_verify($_POST['pass'], $pass)) {
         $_SESSION['auth'] = 1;
         $_SESSION['res'] = 'success';
         header("Location: secret.php");
@@ -18,6 +18,7 @@ if (!empty($_POST)) {
         exit;
     }
 }
+
 
 ?>
 
@@ -43,8 +44,6 @@ if (isset($_SESSION['res'])) {
     echo $_SESSION['res'];
     unset($_SESSION['res']);
 }
-
-
 ?>
 
 <form enctype="multipart/form-data" method="post">
