@@ -10,8 +10,12 @@ if (!empty($_POST)) {
     if ($_POST['login'] == $login && $_POST['pass'] == $pass) {
         $_SESSION['auth'] = 1;
         $_SESSION['res'] = 'success';
+        header("Location: secret.php");
+        die;
     } else {
         $_SESSION['res'] = 'error';
+        header("Location: index.php");
+        exit;
     }
 }
 
@@ -33,6 +37,15 @@ if (!empty($_POST)) {
 </ul>
 
 <h3>Эта страница общедоступна</h3>
+
+<?php
+if (isset($_SESSION['res'])) {
+    echo $_SESSION['res'];
+    unset($_SESSION['res']);
+}
+
+
+?>
 
 <form enctype="multipart/form-data" method="post">
 
